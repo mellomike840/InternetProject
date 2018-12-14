@@ -9,7 +9,7 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
 
     var window: UIWindow?
 
@@ -18,9 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     {
         
         let splitViewController = window!.rootViewController as! UISplitViewController
-        let navigationControler = splitViewController.viewController[splitViewControlelr.viewController.count-1] as! UINavigationController
-        navigationController.topViewController!.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
-        splitViewController.delegate = self
+        let navigationControler = splitViewController.viewController[splitViewControlelr.viewController.count-1] as! UINavigationController navigationController.topViewController!.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem splitViewController.delegate = self
         return true
     }
 
