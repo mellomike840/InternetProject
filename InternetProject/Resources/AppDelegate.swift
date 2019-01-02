@@ -18,7 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     {
         
         let splitViewController = window!.rootViewController as! UISplitViewController
-        let navigationControler = splitViewController.viewController[splitViewControlelr.viewController.count-1] as! UINavigationController navigationController.topViewController!.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem splitViewController.delegate = self
+        let navigationControler = splitViewController.viewControllers[splitViewController.viewControllers.count-1] as! UINavigationController
+        navigationControler.topViewController!.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem; splitViewController.delegate = self
         return true
     }
 

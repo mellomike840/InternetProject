@@ -11,7 +11,8 @@ import WebKit
 
 public class InternetDetailViewController: UIViewController
 {
-
+    @IBOutlet weak var webViewer: WKWebView!
+    @IBOutlet weak var screenTitle: UILabel!
     
     var detailTitle : String?
     {
@@ -41,7 +42,7 @@ public class InternetDetailViewController: UIViewController
             {
                 if (detailAddress != nil)
                 {
-                    loadURL(webAddress: detailAddress!)
+                    loadURL(webaddress: detailAddress!)
                 }
             }
             screenTitle?.text = detailTitle
@@ -59,17 +60,17 @@ public class InternetDetailViewController: UIViewController
 
     private func loadURL(webaddress: String) -> Void
     {
-        let currentURL = URL(String : webAddress)
+        let currentURL = URL(string : webaddress)
         let currentWebRequest = URLRequest(url : currentURL!)
         webViewer.load(currentWebRequest)
     }
     
     private func loadPDF() -> Void
     {
-        if let contentPDF = Bundle.main.url(forResources: "Definitions and stuff", withExtension: "pdf", subdirectory: nil, localization: nil )
+        if let contentPDF = Bundle.main.url(forResource: "Definitions and stuff", withExtension: "pdf", subdirectory: nil, localization: nil )
         {
             let requestedPDF = NSURLRequest(url: contentPDF)
-            webViewer.load(requestPDF as URLRequest)
+            webViewer.load(requestedPDF as URLRequest)
         }
     }
     
